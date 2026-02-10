@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4e8d0;
+    color: #2c1810;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(to bottom, rgba(139, 90, 43, 0.1), transparent);
+    border-bottom: 3px solid #8b5a2b;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #5c3317;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    font-family: Cinzel Decorative;
+}
+
+.hook {
+    font-size: 1.5em;
+    color: #7a4419;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-left: 4px solid #8b5a2b;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+section {
+    margin: 60px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid #8b5a2b;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #5c3317;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #8b5a2b;
+    padding-bottom: 10px;
+}
+
+.lore-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.lore-text {
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+.lore-image {
+    background: linear-gradient(135deg, #6b4423 0%, #4a2f1a 100%);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4e8d0;
+    font-size: 1.2em;
+    border: 3px solid #8b5a2b;
+    border-radius: 4px;
+}
+
+.render-3d {
+    background: linear-gradient(135deg, #3a2614 0%, #2c1810 100%);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f4e8d0;
+    font-size: 1.5em;
+    border: 4px solid #8b5a2b;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.reward-card {
+    background: linear-gradient(to bottom, #fff9f0, #f4e8d0);
+    border: 3px solid #8b5a2b;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.reward-title {
+    font-size: 1.8em;
+    color: #5c3317;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.reward-price {
+    font-size: 2.5em;
+    color: #8b5a2b;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.reward-items {
+    list-style: none;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.reward-items li {
+    padding: 8px 0;
+    border-bottom: 1px solid #d4c4a8;
+}
+
+.reward-items li:before {
+    content: "⚔ ";
+    color: #8b5a2b;
+    font-weight: bold;
+}
+
+.video-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-container {
+    background: #2c1810;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f4e8d0;
+    border: 3px solid #8b5a2b;
+    border-radius: 8px;
+}
+
+.video-title {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #d4af37;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(to bottom, #8b5a2b, #5c3317);
+    color: #f4e8d0;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 40px auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    border: 3px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(to bottom, #5c3317, #8b5a2b);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #5c3317;
+    border-top: 3px solid #8b5a2b;
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .hook {
+        font-size: 1.2em;
+    }
+
+    .lore-content,
+    .video-section {
+        grid-template-columns: 1fr;
+    }
+
+    .rewards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
