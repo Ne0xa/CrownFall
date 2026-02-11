@@ -535,6 +535,30 @@ footer {
     margin-top: 60px;
 }
 
+/* Button for download */
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(to bottom, #8b5a2b, #5c3317);
+    color: #f4e8d0;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 40px auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    border: 3px solid var(--gold-dark);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(to bottom, #5c3317, #8b5a2b);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     h1 {
