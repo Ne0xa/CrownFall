@@ -11,6 +11,23 @@ body {
     line-height: 1.6;
 }
 
+img {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 500px;
+    width:  700px;
+}
+
+.concept-art {
+    width: 600px;
+    height: 350px;
+    max-width: 700px;   /* taille max */
+    border: 3px solid #8b5a2b;
+    border-radius: 4px;
+}
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -382,7 +399,7 @@ h2 {
 
 .lore-image {
     background: linear-gradient(135deg, #6b4423 0%, #4a2f1a 100%);
-    height: 300px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
