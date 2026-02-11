@@ -17,6 +17,302 @@ body {
     padding: 20px;
 }
 
+
+:root {
+    --gold:        #c9a227;
+    --gold-light:  #f0d060;
+    --gold-dark:   #8a6c10;
+    --parchment:   #f2e8c9;
+    --parchment2:  #e8d9a8;
+    --ink:         #2a1a00;
+    --blood:       #8b1a1a;
+    --blood-light: #c0392b;
+    --stone:       #3a3028;
+    --stone-light: #5a4a38;
+    --glow:        rgba(201,162,39,0.5);
+}
+
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+    margin: 0.85rem 0;
+    opacity: 0.6;
+    }
+
+    .funding-widget {
+    width: 100%;
+    max-width: 1500px;
+    height: 1500px;
+    margin: auto;
+    position: relative;
+    }
+
+    /* ── Title ── */
+    .funding-title {
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--stone);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    /* ── Stats row ── */
+    .funding-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.55rem;
+    gap: 0.5rem;
+    }
+
+    .stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+    .stat-block.right { align-items: flex-end; }
+    .stat-block.center { align-items: center; flex: 1; }
+
+    .stat-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    margin-bottom: 0.1rem;
+    }
+
+    .stat-value {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--blood);
+    line-height: 1;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.5),
+        0 -1px 0 rgba(80,0,0,0.4);
+    }
+    .stat-value .currency {
+    font-size: 0.75rem;
+    vertical-align: super;
+    color: var(--gold-dark);
+    }
+
+    .stat-percent {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--stone);
+    }
+
+    .stat-contributors .stat-value {
+    color: var(--stone);
+    font-size: 1rem;
+    }
+
+    /* ── Milestone 20 000 ── */
+    .milestone-marker {
+    position: absolute;
+    top: -12px;
+      /* 35% */
+    left: 35%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+    }
+
+    .milestone-marker1 {
+    position: absolute;
+    top: -12px;
+      /* 35% */
+    left: 100.2%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+    }
+
+    .milestone-flag {
+    background: var(--stone);
+    border: 2px solid var(--gold);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 2px 6px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 0 100%);
+    }
+
+    .milestone-line {
+    width: 2px;
+    height: 52px;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    }
+
+    /* ── Barre principale ── */
+    .bar-track {
+    width: 100%;
+    height: 28px;
+    background: linear-gradient(180deg, #2a1f0e, #1a1208 50%, #2a1f0e);
+    border: 2px solid var(--gold-dark);
+    border-radius: 2px;
+    position: relative;
+    overflow: visible;
+    box-shadow:
+        inset 0 2px 8px rgba(0,0,0,0.8),
+        0 0 0 1px var(--stone);
+    }
+
+    /* */
+    .bar-base {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+      /* 20000 / 27350 = ~73.1% */
+    width: 37%;
+    background: linear-gradient(180deg,
+        #b8780a 0%,
+        #e8a820 30%,
+        #f5c842 50%,
+        #e8a820 70%,
+        #b8780a 100%
+    );
+    border-radius: 1px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    /*  */
+    .bar-base::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%; bottom: 0; width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: shimmer 3s infinite 1s;
+    }
+
+    /* ──  ── */
+    .bar-stretch {
+    position: absolute;
+    top: 0; bottom: 0;
+    /* bar */
+    left: 37%;
+    right: 0;
+    background: linear-gradient(180deg,
+        #6b1010 0%,
+        #a82020 25%,
+        #c0392b 50%,
+        #a82020 75%,
+        #6b1010 100%
+    );
+    border-radius: 0 1px 1px 0;
+    box-shadow: inset 0 1px 0 rgba(255,160,160,0.2);
+    }
+
+    .bar-stretch::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%; bottom: 0; width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255,200,200,0.2), transparent);
+    animation: shimmer 2.4s infinite 0.5s;
+    }
+
+    @keyframes shimmer {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+    }
+
+    /* ──  ── */
+    .bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.35rem;
+    }
+    .bar-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    color: var(--stone-light);
+    letter-spacing: 0.08em;
+    }
+
+    /* ── Mileston section ── */
+    .tiers-section {
+    margin-top: 1.1rem;
+    display: flex;
+    gap: 0.6rem;
+    }
+
+    .tier {
+    flex: 1;
+    border: 1.5px solid;
+    border-radius: 2px;
+    padding: 0.55rem 0.6rem 0.5rem;
+    position: relative;
+    }
+
+    .tier-base {
+    border-color: var(--gold-dark);
+    background: linear-gradient(160deg, rgba(201,162,39,0.12), rgba(201,162,39,0.04));
+    }
+    .tier-base .tier-badge {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--stone);
+    }
+
+    .tier-stretch {
+    border-color: var(--blood);
+    background: linear-gradient(160deg, rgba(139,26,26,0.15), rgba(139,26,26,0.05));
+    }
+    .tier-stretch .tier-badge {
+    background: linear-gradient(135deg, var(--blood), var(--blood-light));
+    color: #ee0a0a;
+    }
+
+    .tier-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    margin-bottom: 0.3rem;
+    }
+
+    .tier-check {
+    position: absolute;
+    top: 5px; right: 7px;
+    font-size: 0.9rem;
+    }
+
+    .tier-desc {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 0.67rem;
+    color: var(--stone-light);
+    line-height: 1.35;
+    }
+
+    .tier-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--stone);
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.04em;
+    }
+
 header {
     text-align: center;
     padding: 60px 20px 40px;
@@ -203,7 +499,7 @@ h2 {
     display: block;
     width: fit-content;
     text-align: center;
-    border: 3px solid #d4af37;
+    border: 3px solid var(--gold-dark);
     transition: all 0.3s ease;
 }
 
@@ -243,5 +539,12 @@ footer {
 
     h2 {
         font-size: 1.8em;
+    }
+    .stat-value { 
+        font-size: 1rem; 
+    }
+
+    .tiers-section { 
+        flex-direction: column; 
     }
 }
